@@ -1,78 +1,20 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Мой блог</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Блог</title>
 </head>
-
 <body>
 
-<h1>Мои достижения</h1>
-<a href="/notes">Перейти в дневник программиста</a>
-<p>Я изучаю программирование и создаю сайты</p>
+<h1>Все посты</h1>
 
-<img src="{{ url_for('static', filename='image.jpg') }}" width="300">
+<a href="/login">Войти</a><br><br>
+<a href="/register">Регистрация</a><br><br>
 
-<h2>Навыки</h2>
-
-<ul>
-    <li>Python</li>
-    <li>HTML</li>
-    <li>CSS</li>
-</ul>
-<h2>Прогресс обучения</h2>
-
-<table border="1">
-    <tr>
-        <th>HTML</th>
-        <th>CSS</th>
-        <th>Python</th>
-        <th>Flask</th>
-        <th>Git</th>
-        <th>SQL</th>
-        <th>JS</th>
-        <th>API</th>
-<th>Flask 2</th>
-    </tr>
-
-    <tr>
-        <td>80%</td>
-        <td>70%</td>
-        <td>60%</td>
-        <td>20%</td>
-        <td>30%</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>70%</td>
-        <td>60%</td>
-        <td>50%</td>
-        <td>10%</td>
-        <td>20%</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-
-    <tr>
-        <td>Хорошо</td>
-        <td>Нормально</td>
-        <td>Учусь</td>
-        <td>Начало</td>
-        <td>Учусь</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-
-</table>
+{% for post in posts %}
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.text }}</p>
+    <hr>
+{% endfor %}
 
 </body>
 </html>

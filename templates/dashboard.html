@@ -1,0 +1,15 @@
+<a href="/">На главную</a>
+<h1>Мои посты</h1>
+
+<form method="POST">
+    <input type="text" name="title" placeholder="Заголовок"><br><br>
+    <textarea name="text" placeholder="Текст"></textarea><br><br>
+    <button>Добавить</button>
+</form>
+
+{% for post in posts %}
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.text }}</p>
+<a href="/delete/{{ post.id }}">Удалить</a>
+<hr>
+{% endfor %}
