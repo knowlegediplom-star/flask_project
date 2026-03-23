@@ -1,0 +1,26 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: Arial;
+}
+
+p {
+    font-size: 20px;
+}
+
+img {
+    width: 300px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 10px;
+}
