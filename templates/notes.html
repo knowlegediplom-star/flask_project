@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дневник программиста</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<h1>Дневник программиста</h1>
+
+<a href="/">← Назад</a>
+
+<h2>Добавить запись</h2>
+
+<form method="POST">
+    <input type="text" name="title" placeholder="Заголовок"><br><br>
+    <textarea name="text" placeholder="Текст"></textarea><br><br>
+    <button type="submit">Добавить</button>
+</form>
+
+<h2>Записи</h2>
+
+{% for title, text in notes.items() %}
+    <h3>{{ title }}</h3>
+    <p>{{ text }}</p>
+{% endfor %}
+
+</body>
+</html>
