@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
+<body>
+
 <h1>Дневник программиста</h1>
 
 <a href="/">← Назад</a>
@@ -13,15 +15,17 @@
 
 <form method="POST">
     <input type="text" name="title" placeholder="Заголовок"><br><br>
+    <input type="text" name="subtitle" placeholder="Подзаголовок"><br><br>
     <textarea name="text" placeholder="Текст"></textarea><br><br>
     <button type="submit">Добавить</button>
 </form>
 
 <h2>Записи</h2>
 
-{% for title, text in notes.items() %}
-    <h3>{{ title }}</h3>
-    <p>{{ text }}</p>
+{% for note in notes %}
+    <h3>{{ note.title }}</h3>
+    <h4>{{ note.subtitle }}</h4>
+    <p>{{ note.text }}</p>
 {% endfor %}
 
 </body>
